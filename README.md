@@ -2,7 +2,7 @@
 
 # snapdragon setup
 
-A guide on how to setup a programming environment for the Open-Q 820 (APQ8096) development kit on Ubuntu. All of the following guidelines have been tested under Ubuntu 14.04 LTS.
+A guide on how to setup a programming environment for the Open-Q 820 (APQ8096) development kit on Ubuntu. All of the following guidelines have been tested under Ubuntu 14.04.5 LTS.
 
 ## Enabling on-device developer options
 
