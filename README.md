@@ -19,7 +19,7 @@ The installation of the following tools is required:
 * fastboot: `sudo apt-get install android-tools-fastboot`
 * Android NDK: [download the latest version for Linux x86_64](https://developer.android.com/ndk/downloads/index.html "Android NDK downloads")
 
-In order to avoid starting adb's server as root, create a file named `/etc/udev/rules.d/51-android.rules` and add `SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev"` to its content. ATTR{idVendor} specifies the unique vendor ID corresponding to Qualcomm, MODE specifies read/write permissions and GROUP defines the device node's ownership.
+In order to avoid starting adb's server as root, create a file named `/etc/udev/rules.d/51-android.rules` and add `SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev"` to its content (root permissions required). ATTR{idVendor} specifies the unique vendor ID corresponding to Qualcomm, MODE specifies read/write permissions and GROUP defines the device node's ownership.
 
 Exporting a variable named `ANDROID_NDK` in `~/.bash_profile` pointing to Android NDK's installation directory is recommended to avoid writing its path recurrently, for consistency when writing scripts and, finally, because some of the scripts in my other repositories rely on its existance to function.
 
