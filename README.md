@@ -1,4 +1,4 @@
-<img src="http://www.unixstickers.com/image/data/stickers/ubuntu/Ubuntu-circle-friends-black-no-contour.sh.png" height="256"> <img src="http://www.clipartbest.com/cliparts/RcA/9Rk/RcA9Rk7cL.png" height="256"> <img src="http://www.qualcomm.cn/sites/regional/files/styles/optimize/public/component-item/flexible-block/chip_0.png?itok=PpoXam0G" height="256">
+<img src="https://www.dropbox.com/s/f2xnohib057x4al/snapdragon-setup.png?dl=0" height="256">
 
 # snapdragon setup
 
