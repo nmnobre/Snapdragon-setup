@@ -1,4 +1,4 @@
-<img src="https://www.dropbox.com/home/Public%20documents?preview=snapdragon-setup.png" height="256">
+<img src="http://www.cs.man.ac.uk/~nobren/images/snapdragon-setup.png" height="256">
 
 # snapdragon setup
 
