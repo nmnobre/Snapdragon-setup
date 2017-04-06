@@ -17,9 +17,12 @@ Once in Settings > Developer options, make sure to:
 The installation of the following tools is required:
 * Android Debug Bridge (adb): `sudo apt-get install android-tools-adb`
 * fastboot: `sudo apt-get install android-tools-fastboot`
-* Android NDK: [download the latest version for Linux x86_64](https://developer.android.com/ndk/downloads/index.html "Android NDK downloads")
+* Android NDK: [download the latest version for Linux x86_64](https://developer.android.com/ndk/downloads/index.html "Android NDK downloads") and extract it using `sudo unzip NDK_PACKAGE_NAME -d EXTRACT_DIR`. For example, if the package's name is `android-ndk-r14b-linux-x86_64.zip` and `/opt/` is the target directory, `sudo unzip android-ndk-r14b-linux-x86_64.zip -d /opt/` should produce the desired results.
 
-In order to avoid starting adb's server as root, create a file named `/etc/udev/rules.d/51-android.rules` and add `SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev"` to its content. This can be achieved with the following command: `echo SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev" | sudo tee --append /etc/udev/rules.d/51-android.rules`. ATTR{idVendor} specifies the unique vendor ID corresponding to Qualcomm, MODE specifies read/write permissions and GROUP defines the device node's ownership.
+In order to avoid starting adb's server as root:
+* create a file named `/etc/udev/rules.d/51-android.rules`
+* add `SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev"` to its content
+ATTR{idVendor} specifies the unique vendor ID corresponding to Qualcomm, MODE specifies read/write permissions and GROUP defines the device node's ownership. This procedure can be completed with the following command: `echo SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev" | sudo tee --append /etc/udev/rules.d/51-android.rules`.
 
 Exporting a variable named `ANDROID_NDK` in `~/.bash_profile` pointing to Android NDK's installation directory is recommended to avoid writing its path recurrently, for consistency when writing scripts and, finally, because some of the scripts hosted in this GitHub page rely on its existance to function. For example, `echo >> ~/.bash_profile && echo "export ANDROID_NDK=/opt/android-ndk-r14b" >> ~/.bash_profile` would suffice if Android NDK's installation directory were `/opt/android-ndk-r14b`.
 
