@@ -33,9 +33,7 @@ Additionally, and especially if the development board does not include a display
 
 ## Qualcomm SDKs
 
-Qualcomm provides programmers with a set of libraries, the Symphony System Manager SDK, to allow for tighter control over the various compute units (i.e. CPU, GPU and DSP) within their processors. Namely, it includes resources for task scheduling, heterogeneous offload, and power and thermal management.
-
-To use it, simply:
+Qualcomm provides programmers with a set of libraries, the Symphony System Manager SDK, to allow for tighter control over the various compute units (i.e. CPU, GPU and DSP) within their processors. Namely, it includes resources for task scheduling, heterogeneous offload, and power and thermal management. To use the Symphony SDK, simply:
 * [download the latest version for Linux](https://developer.qualcomm.com/software/symphony-system-manager-sdk "Symphony System Manager SDK");
 * install it with `sudo dpkg -i SYMPHONY_PACKAGE_NAME`. For example, if the file is called `libsymphony-1.1.2.deb`, then `sudo dpkg -i libsymphony-1.1.2.deb` should be the command to issue. This will decompress the libraries to `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/` (e.g. `/opt/Qualcomm/Symphony/1.1.2/`);
 * verify the installation by following the instructions described in the provided documentation which should be available in `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/docs/`. cmake version 2.8.12 or above is required: `sudo apt-get install cmake`.
