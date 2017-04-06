@@ -42,7 +42,7 @@ The Symphony SDK includes precompiled dynamic libraries for a multitude of platf
 * [download the latest version for Linux](https://developer.qualcomm.com/software/hexagon-dsp-sdk "Hexagon DSP SDK");
 * install it with `sudo ./HEXAGON_PACKAGE_NAME`. For example, if the file is called `qualcomm_hexagon_sdk_3_1_eval.bin`, then `sudo ./qualcomm_hexagon_sdk_3_1_eval.bin` should be the command to issue. If the following error occurs: `An internal LaunchAnywhere application error has occured and this application cannot proceed. (LAX)`, unsetting the `PS1` environment variable, or changing it using `export PS1=">"` should solve the issue. For consistency, it is recommended to install this SDK to `/opt/Qualcomm/` as well;
 * install Ubuntu's 32-bit compatibility libraries: `sudo apt-get install lib32z1 lib32ncurses5`;
-* source `/opt/Qualcomm/Hexagon_SDK/HEXAGON_VERSION/setup_sdk_env.source` to set-up the local environment. For example, `source /opt/Qualcomm/Hexagon_SDK/3.1/setup_sdk_env.source`. To avoid doing this repeatedly for every shell session, add said command to `~/.bash_profile`. For the example given `echo >> ~/.bash_profile && echo "source /opt/Qualcomm/Hexagon_SDK/3.1/setup_sdk_env.source 1>/dev/null" >> ~/.bash_profile` should do it.
+* source `/opt/Qualcomm/Hexagon_SDK/HEXAGON_VERSION/setup_sdk_env.source` to set-up the local environment. For example, `source /opt/Qualcomm/Hexagon_SDK/3.1/setup_sdk_env.source`. To avoid doing this repeatedly for every shell session, add the previous command to `~/.bash_profile`. For the example given `echo >> ~/.bash_profile && echo "source /opt/Qualcomm/Hexagon_SDK/3.1/setup_sdk_env.source 1>/dev/null" >> ~/.bash_profile` should do it.
 
 ## Useful links
 
