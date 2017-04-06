@@ -34,11 +34,11 @@ Additionally, and especially if the development board does not include a display
 Qualcomm provides programmers with a set of libraries, the Symphony System Manager SDK, to allow for tighter control over the various compute units (i.e. CPU, GPU and DSP) within their processors. Namely, it includes resources for task scheduling, heterogeneous offload, and power and thermal management.
 
 To use it, simply:
-* [download the latest version for Linux](https://developer.qualcomm.com/software/symphony-system-manager-sdk "Symphony System Manager SDK")
+* [download the latest version for Linux](https://developer.qualcomm.com/software/symphony-system-manager-sdk "Symphony System Manager SDK");
 * install it with `sudo dpkg -i SYMPHONY_PACKAGE_NAME`. For example, if the file is called `libsymphony-1.1.2.deb`, then `sudo dpkg -i libsymphony-1.1.2.deb` should be the command to issue. This will decompress the libraries to `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/` (e.g. `/opt/Qualcomm/Symphony/1.1.2/`);
-* Verify the installation by following the instructions described in the provided documentation which should be available in `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/docs/`.
+* verify the installation by following the instructions described in the provided documentation which should be available in `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/docs/`.
 
-The Symphony SDK includes precompiled dynamic libraries for a multitude of platforms. On Android, it provides, among others, a CPU+GPU+DSP library which supports all compute units, including the Hexagon DSP. However, this is only supported in 32-bit mode and requires Qualcomm's Hexagon SDK.
+The Symphony SDK includes precompiled dynamic libraries for a multitude of platforms. On Android, it provides, among others, a CPU+GPU+DSP library which supports all compute units, including Qualcomm's Hexagon DSP. However, support is only provided in 32-bit mode (AArch32) and requires Qualcomm's Hexagon SDK.
 
 
 
