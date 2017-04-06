@@ -14,6 +14,8 @@ Once in Settings > Developer options, make sure to:
 
 ## Android tools
 
+First and foremost, ensure that the gcc compiler, make and other basic tools are installed by running `sudo apt-get install build-essential`.
+
 The installation of the following tools is required:
 * Android Debug Bridge (adb): `sudo apt-get install android-tools-adb`;
 * fastboot: `sudo apt-get install android-tools-fastboot`;
@@ -36,12 +38,13 @@ Qualcomm provides programmers with a set of libraries, the Symphony System Manag
 To use it, simply:
 * [download the latest version for Linux](https://developer.qualcomm.com/software/symphony-system-manager-sdk "Symphony System Manager SDK");
 * install it with `sudo dpkg -i SYMPHONY_PACKAGE_NAME`. For example, if the file is called `libsymphony-1.1.2.deb`, then `sudo dpkg -i libsymphony-1.1.2.deb` should be the command to issue. This will decompress the libraries to `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/` (e.g. `/opt/Qualcomm/Symphony/1.1.2/`);
-* verify the installation by following the instructions described in the provided documentation which should be available in `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/docs/`.
+* verify the installation by following the instructions described in the provided documentation which should be available in `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/docs/`. cmake version 2.8.12 or above is required: `sudo apt-get install cmake`.
 
-The Symphony SDK includes precompiled dynamic libraries for a multitude of platforms. On Android, it provides, among others, a CPU+GPU+DSP library which supports all compute units, including Qualcomm's Hexagon DSP. However, support is only provided in 32-bit mode (AArch32) and requires Qualcomm's Hexagon SDK.
-
-
-
+The Symphony SDK includes precompiled dynamic libraries for a multitude of platforms. On Android, it provides, among others, a CPU+GPU+DSP library which supports all compute units, including the Hexagon DSP. However, support is only provided in 32-bit mode (AArch32) and requires Qualcomm's Hexagon SDK:
+* [download the latest version for Linux](https://developer.qualcomm.com/software/hexagon-dsp-sdk "Hexagon DSP SDK");
+* install it with `sudo ./HEXAGON_PACKAGE_NAME`. For example, if the file is called `qualcomm_hexagon_sdk_3_1_eval.bin`, then `sudo ./qualcomm_hexagon_sdk_3_1_eval.bin` should be the command to issue. If the following error occurs: `An internal LaunchAnywhere application error has occured and this application cannot proceed. (LAX)`, unsetting the `PS1` environment variable, or changing it using `export PS1=">"` should solve it. For consistency, it is recommended to install this SDK to `/opt/Qualcomm/` as well.
+* source `/opt/Qualcomm/Hexagon_SDK/HEXAGON_VERSION/setup_sdk_env.source` to set-up the local environment. For example, `source /opt/Qualcomm/Hexagon_SDK/3.1/setup_sdk_env.source`. To avoid doing this repeatedly for every shell session, add said command to `~/.bash_profile`. For the example given: `echo >> ~/.bash_profile && echo "source /opt/Qualcomm/Hexagon_SDK/3.1/setup_sdk_env.source 1>/dev/null" >> ~/.bash_profile`;
+* install 
 
 ## Useful links
 
