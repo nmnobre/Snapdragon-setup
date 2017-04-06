@@ -2,7 +2,7 @@
 
 # snapdragon setup
 
-A guide on how to setup a programming environment for the Open-Q 820 (APQ8096) development kit on Ubuntu. All of the following guidelines have been tested under Ubuntu 14.04.5 LTS.
+A guide on how to setup a programming environment for the Open-Q 820 (APQ8096) development kit on Ubuntu. All of the following guidelines have been tested under Ubuntu 14.04.5 LTS (64-bit).
 
 ## Enabling on-device developer options
 
@@ -19,7 +19,7 @@ First and foremost, ensure that the gcc compiler, make and other basic tools are
 The installation of the following tools is required:
 * Android Debug Bridge (adb): `sudo apt-get install android-tools-adb`;
 * fastboot: `sudo apt-get install android-tools-fastboot`;
-* Android NDK: [download the latest version for Linux x86_64](https://developer.android.com/ndk/downloads/index.html "Android NDK downloads") and extract it using `sudo unzip NDK_PACKAGE_NAME -d EXTRACT_DIR`. For example, if the package's name is `android-ndk-r14b-linux-x86_64.zip` and `/opt/` is the target directory, `sudo unzip android-ndk-r14b-linux-x86_64.zip -d /opt/` should produce the desired results.
+* Android NDK: [download the latest version for Linux](https://developer.android.com/ndk/downloads/index.html "Android NDK downloads") and extract it using `sudo unzip NDK_PACKAGE_NAME -d EXTRACT_DIR`. For example, if the package's name is `android-ndk-r14b-linux-x86_64.zip` and `/opt/` is the target directory, `sudo unzip android-ndk-r14b-linux-x86_64.zip -d /opt/` should produce the desired results.
 
 In order to avoid starting adb's server as root:
 * create a file named `/etc/udev/rules.d/51-android.rules`;
