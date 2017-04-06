@@ -22,6 +22,7 @@ The installation of the following tools is required:
 In order to avoid starting adb's server as root:
 * create a file named `/etc/udev/rules.d/51-android.rules`
 * add `SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev"` to its content
+
 ATTR{idVendor} specifies the unique vendor ID corresponding to Qualcomm, MODE specifies read/write permissions and GROUP defines the device node's ownership. This procedure can be completed with the following command: `echo SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev" | sudo tee --append /etc/udev/rules.d/51-android.rules`.
 
 Exporting a variable named `ANDROID_NDK` in `~/.bash_profile` pointing to Android NDK's installation directory is recommended to avoid writing its path recurrently, for consistency when writing scripts and, finally, because some of the scripts hosted in this GitHub page rely on its existance to function. For example, `echo >> ~/.bash_profile && echo "export ANDROID_NDK=/opt/android-ndk-r14b" >> ~/.bash_profile` would suffice if Android NDK's installation directory were `/opt/android-ndk-r14b`.
