@@ -15,13 +15,13 @@ Once in Settings > Developer options, make sure to:
 ## Android tools
 
 The installation of the following tools is required:
-* Android Debug Bridge (adb): `sudo apt-get install android-tools-adb`
-* fastboot: `sudo apt-get install android-tools-fastboot`
+* Android Debug Bridge (adb): `sudo apt-get install android-tools-adb`;
+* fastboot: `sudo apt-get install android-tools-fastboot`;
 * Android NDK: [download the latest version for Linux x86_64](https://developer.android.com/ndk/downloads/index.html "Android NDK downloads") and extract it using `sudo unzip NDK_PACKAGE_NAME -d EXTRACT_DIR`. For example, if the package's name is `android-ndk-r14b-linux-x86_64.zip` and `/opt/` is the target directory, `sudo unzip android-ndk-r14b-linux-x86_64.zip -d /opt/` should produce the desired results.
 
 In order to avoid starting adb's server as root:
-* create a file named `/etc/udev/rules.d/51-android.rules`
-* add `SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev"` to its content
+* create a file named `/etc/udev/rules.d/51-android.rules`;
+* add `SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev"` to its content.
 
 ATTR{idVendor} specifies the unique vendor ID corresponding to Qualcomm, MODE specifies read/write permissions and GROUP defines the device node's ownership. This procedure can be completed with the following command: `echo SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", MODE="0666", GROUP="plugdev" | sudo tee --append /etc/udev/rules.d/51-android.rules`.
 
@@ -35,11 +35,12 @@ Qualcomm provides programmers with a set of libraries, the Symphony System Manag
 
 To use it, simply:
 * [download the latest version for Linux](https://developer.qualcomm.com/software/symphony-system-manager-sdk "Symphony System Manager SDK")
-* install it with `sudo dpkg -i SYMPHONY_PACKAGE_NAME`
-
-For example, if the file is called `libsymphony-1.1.2.deb`, then `sudo dpkg -i libsymphony-1.1.2.deb` should be the command to issue. This will decompress the libraries to `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/` (e.g. `/opt/Qualcomm/Symphony/1.1.2/`). At this point, it is recommended to verify the installation by following the instructions described in the provided documentation which should be available in `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/docs/`.
+* install it with `sudo dpkg -i SYMPHONY_PACKAGE_NAME`. For example, if the file is called `libsymphony-1.1.2.deb`, then `sudo dpkg -i libsymphony-1.1.2.deb` should be the command to issue. This will decompress the libraries to `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/` (e.g. `/opt/Qualcomm/Symphony/1.1.2/`);
+* Verify the installation by following the instructions described in the provided documentation which should be available in `/opt/Qualcomm/Symphony/SYMPHONY_VERSION/docs/`.
 
 The Symphony SDK includes precompiled dynamic libraries for a multitude of platforms. On Android, it provides, among others, a CPU+GPU+DSP library which supports all compute units, including the Hexagon DSP. However, this is only supported in 32-bit mode and requires Qualcomm's Hexagon SDK.
+
+
 
 
 ## Useful links
